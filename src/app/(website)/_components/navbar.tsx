@@ -2,12 +2,13 @@ import { Link as LucideLink, MenuIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
+import { Button } from '@/components/ui/button'
 
 type Props = {}
 
 const LandingPageNavBar = () => {
   return (
-    <nav className='flex justify-between items-center'>
+    <div className='flex justify-between items-center'>
       <div className='text-3xl font-semibold flex items-center gap-x-3'>
         <MenuIcon className="w-6 h-6" />
         <Image
@@ -30,7 +31,12 @@ const LandingPageNavBar = () => {
           <span>Contact</span>
         </Link>
       </div>
-    </nav>
+      <Link href='/auth/sign-in'>
+        <Button className='text-base flex gap-x-2'>
+          Login
+        </Button>
+      </Link>
+    </div>
   )
 }
 
